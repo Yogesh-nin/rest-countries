@@ -4,14 +4,14 @@ const CountryCard = (props) => {
 
   const style = {
     backgroundColor: props.mode === 'light' ? 'hsl(0, 0%, 100%)' :'hsl(209, 23%, 22%)',
-    color: props.mode === 'light' ? 'hsl(200, 15%, 8%)' : 'hsl(0, 0%, 100%)',
-
-    height: '295px'
+    color: props.mode === 'light' ? 'hsl(200, 15%, 8%)' : 'hsl(0, 0%, 100%)'
   }
   return (
     <div>
         <div class="card" style={style} >
-            <img src={props.flag} class="card-img-top" alt="..." />
+        <img src={props.flag} class="card-img-top img-fluid" alt="..." />
+
+            
             <div class="card-body">
                 <h5 class="card-title">{props.title}</h5>
                 <span className='card-content'><strong>Population: </strong>{props.population}</span> <br></br>

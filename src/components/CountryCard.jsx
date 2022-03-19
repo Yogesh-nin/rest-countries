@@ -8,7 +8,7 @@ const CountryCard = (props) => {
   }
   return (
     <div>
-        <div class="card" style={style} >
+        <div class={`card card-${props.mode}`} style={style} >
         <img src={props.flag} class="card-img-top img-fluid" alt="..." />
 
             

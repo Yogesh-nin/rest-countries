@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from './axios/index'
-
+import {Link} from 'react-router-dom'
 const CountryDetails = (props) => {
 
     const [countriesData, setCountriesData] = useState([])
@@ -20,10 +20,12 @@ const CountryDetails = (props) => {
 
 
     const updateCountries = async () => {
-        
+        props.setProgress(30);
         const request = await axios.get();
+        props.setProgress(60);
         console.log(request);
         setCountriesData(request.data);
+        props.setProgress(100);
 
     }
 
@@ -38,7 +40,7 @@ const CountryDetails = (props) => {
         <div className='container' style={style}>
             <div className='row'>
                 <div className='col-auto'>
-                    <a className='btn my-4' href="/" style={btnStyle}>&#8592; Back</a>
+                    <Link className={`btn back-btn-${props.mode} my-4`} to="/" style={btnStyle}>&#8592; Back</Link>
                 </div>
             </div>
             {

@@ -11,14 +11,17 @@ const Home = (props) => {
 
     const style = {
         backgroundColor: props.mode === 'light' ? 'hsl(0, 0%, 100%)' :'hsl(207, 26%, 17%)',
-        color: props.mode === 'light' ? 'hsl(200, 15%, 8%)' : 'hsl(0, 0%, 100%)'
+        color: props.mode === 'light' ? 'hsl(200, 15%, 8%)' : 'hsl(0, 0%, 100%)',
+        height: props.progress != 100 ? '90vh' : ''
     }
 
     const updateCountries = async () => {
         
+        props.setProgress(10);
         const request = await axios.get();
-        console.log(request);
+        props.setProgress(70);
         setCountriesData(request.data);
+        props.setProgress(100);
 
     }
 
@@ -31,6 +34,7 @@ const Home = (props) => {
         props.details(id);
         console.log(id)
         navigate(`/${id}`);
+        props.setProgress(0);
     }
 
 

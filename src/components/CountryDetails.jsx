@@ -46,24 +46,24 @@ const CountryDetails = (props) => {
                     if(ele.alpha3Code === props.id)
                     {
                         return <div className='row py-4' key={ele.alpha3Code}>
-                            <div className='col-5'>
+                            <div className='col-12 col-md-5'>
                                 <div className="flex-shrink-0">
                                     <img src={ele.flags.svg} className='img img-fluid' alt="country flag" height='20%' />
                                 </div>
                             </div>
-                            <div className='col-6'>
+                            <div className='col-12 col-md-6'>
                                 <div className="row my-3">
                                     <h2>{ele.name}</h2>
                                 </div>
                                 <div className='row my-3'>
-                                    <div className='col-6'>
+                                    <div className='col-12 col-md-6'>
                                         <span><strong>Native name: </strong>{ele.nativeName}</span><br />
                                         <span><strong>Population: </strong>{ele.population}</span><br />
                                         <span><strong>Region: </strong>{ele.region}</span><br />
                                         <span><strong>Subregion: </strong>{ele.subRegion}</span><br />
                                         <span><strong>Capital: </strong>{ele.capital}</span><br />
                                     </div>
-                                    <div className="col-6">
+                                    <div className="col-12 col-md-6">
                                         <span><strong>Top level Domain: </strong>{ele.topLevelDomain}</span><br />
                                         <span><strong>Currencies: </strong></span><br />
                                         <span><strong>Languages: </strong>{ele.languages[0]?.name}</span><br />

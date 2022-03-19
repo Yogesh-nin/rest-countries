@@ -9,14 +9,14 @@ const Navbar = (props) => {
     }
 
   return (
-    <nav class={`navbar navbar-expand-lg navbar-${props.mode}`} style={style}>
-        <div class="container">
-            <a class="navbar-brand heading mx-4 " href="#">Where in the world?</a>
+    <nav className={`navbar navbar-expand-lg navbar-${props.mode}`} style={style}>
+        <div className="container">
+            <a className="navbar-brand heading mx-4 " href="#">Where in the world?</a>
 
-            <div className='mx-4 mode' style={{color: props.textColor === 'light' ? 'black' : 'white'}} onClick={props.toggleMode}>
+            <div className='mode' style={{color: props.textColor === 'light' ? 'black' : 'white'}} onClick={props.toggleMode}>
 
                {
-                   props.mode === 'light' ? <span ><i class="fas fa-moon"></i> Dark mode</span> : <span><i class="fas fa-sun"></i> Light mode</span>
+                   props.mode === 'light' ? <span ><i className="fas fa-moon"></i> Dark mode</span> : <span><i className="fas fa-sun"></i> Light mode</span>
                }
             </div>
     

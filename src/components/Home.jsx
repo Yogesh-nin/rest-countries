@@ -41,7 +41,7 @@ const Home = (props) => {
             <div className="row">
                     {
                         countriesData.map((ele) =>{
-                            return <div className="col-auto my-3 mx-4" key={ele.alpha3Code} onClick={()=> showCountry(ele.alpha3Code)}  style={{width: '25%'}}>
+                            return <div className="col-auto country-card-component my-3 mx-4 " key={ele.alpha3Code} onClick={()=> showCountry(ele.alpha3Code)}>
                                 <CountryCard flag={ele.flags.svg} title={ele.name} population={ele.population} region={ele.region} capital={ele.capital} mode={props.mode} />
                             </div>
                         })

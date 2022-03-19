@@ -11,6 +11,14 @@ const CountryDetails = (props) => {
         height : '90vh'
     }
 
+    const btnStyle = {
+        backgroundColor: props.mode === 'light' ? 'hsl(0, 0%, 100%)' :'hsl(209, 23%, 22%)',
+        color: props.mode === 'light' ? 'hsl(200, 15%, 8%)' : 'hsl(0, 0%, 100%)',
+        display: 'inline-block'
+    }
+
+
+
     const updateCountries = async () => {
         
         const request = await axios.get();
@@ -23,15 +31,21 @@ const CountryDetails = (props) => {
         updateCountries()
     }, [])
 
+    
+
   return (
     <div className='container-fluid' style={style}>
-        <div className='container' style={{height: 'inherit', overflow: 'hidden'}}>
+        <div className='container' style={style}>
+            <div className='row'>
+                <div className='col-auto'>
+                    <a className='btn my-4' href="/" style={btnStyle}>&#8592; Back</a>
+                </div>
+            </div>
             {
                 countriesData.map((ele) =>{
                     if(ele.alpha3Code === props.id)
                     {
-                        return <div className='row py-4 d-flex align-items-center' key={ele.alpha3Code}>
-                            
+                        return <div className='row py-4' key={ele.alpha3Code}>
                             <div className='col-5'>
                                 <div className="flex-shrink-0">
                                     <img src={ele.flags.svg} className='img img-fluid' alt="country flag" height='20%' />

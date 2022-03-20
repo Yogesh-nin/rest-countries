@@ -1,11 +1,13 @@
 import React from 'react'
 import './Header.css'
+import { Link } from 'react-router-dom'
 const Header = (props) => {
 
     const style = {
         backgroundColor: props.mode === 'light' ? 'hsl(0, 0%, 100%)' :'hsl(209, 23%, 22%)',
         color: props.mode === 'light' ? 'hsl(200, 15%, 8%)' : 'hsl(0, 0%, 100%)'
     }
+
 
   return (
       <header className="container">
@@ -22,11 +24,11 @@ const Header = (props) => {
                     Filter by region &nbsp;
                 </button>
                 <ul className="dropdown-menu" aria-labelledby="regions"  style={style}> 
-                    <li><a className="dropdown-item" href="#" style={style}>Africa</a></li>
-                    <li><a className="dropdown-item" href="#" style={style}>America</a></li>
-                    <li><a className="dropdown-item" href="#" style={style}>Asia</a></li>
-                    <li><a className="dropdown-item" href="#" style={style}>Europe</a></li>
-                    <li><a className="dropdown-item" href="#" style={style}>Australia</a></li>
+                    <li onClick={()=> props.filter('Africa')}><Link className="dropdown-item" to="" style={style}>Africa</Link></li>
+                    <li onClick={()=> props.filter('Americas')}><Link className="dropdown-item" to="" style={style}>America</Link></li>
+                    <li onClick={()=> props.filter('Asia')}><Link className="dropdown-item" to="" style={style}>Asia</Link></li>
+                    <li onClick={()=> props.filter('Europe')}><Link className="dropdown-item" to="" style={style}>Europe</Link></li>
+                    <li onClick={()=> props.filter('Oceania')}><Link className="dropdown-item" to="" style={style}>Oceania</Link></li>
                 </ul>
                 </div>
               </div>

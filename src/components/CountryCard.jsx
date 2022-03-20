@@ -8,12 +8,12 @@ const CountryCard = (props) => {
   }
   return (
     <div>
-        <div class={`card card-${props.mode}`} style={style} >
-        <img src={props.flag} class="card-img-top img-fluid" alt="..." />
+        <div className={`card card-${props.mode}`} style={style} >
+        <img src={props.flag} className="card-img-top img-fluid" alt="..." />
 
             
-            <div class="card-body">
-                <h5 class="card-title">{props.title}</h5>
+            <div className="card-body">
+                <h5 className="card-title">{props.title}</h5>
                 <span className='card-content'><strong>Population: </strong>{props.population}</span> <br></br>
                 <span className='card-content'><strong>Region: </strong> {props.region}</span><br></br>
                 <span className='card-content'><strong>Capital:</strong>  {props.capital}</span><br></br>

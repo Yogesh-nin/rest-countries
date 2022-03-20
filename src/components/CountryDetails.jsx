@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import axios from './axios/index'
-import {Link} from 'react-router-dom'
+import {Link, useParams} from 'react-router-dom'
 const CountryDetails = (props) => {
 
     const [countriesData, setCountriesData] = useState([])
-
+    const { id } = useParams();
     const style = {
         backgroundColor: props.mode === 'light' ? 'hsl(0, 0%, 100%)' :'hsl(207, 26%, 17%)',
         color: props.mode === 'light' ? 'hsl(200, 15%, 8%)' : 'hsl(0, 0%, 100%)',
@@ -45,7 +45,7 @@ const CountryDetails = (props) => {
             </div>
             {
                 countriesData.map((ele) =>{
-                    if(ele.alpha3Code === props.id)
+                    if(ele.alpha3Code === id)
                     {
                         return <div className='row py-4' key={ele.alpha3Code}>
                             <div className='col-12 col-md-5'>
@@ -77,7 +77,7 @@ const CountryDetails = (props) => {
                                         <span><strong>Border countries: </strong></span>
                                     </div>
                                     <div className='col-auto'>
-                                        <span><a class="btn btn-dark" href="#" role="button">France</a></span>
+                                        <span><a className="btn btn-dark" href="#" role="button">France</a></span>
                                     </div>
                                 </div>
                                 

@@ -13,8 +13,10 @@ const Header = (props) => {
       <header className="container">
           <div className="row py-4 d-flex align-items-center justify-content-between">
               <div className="col-12 col-md-4 my-4">
-                <div className={`search d-flex align-items-center input-${props.mode}`}>
-                    <i className="fa fa-search" style={{color: 'black'}}></i> <input type="text" className="form-control" placeholder="Search for a country" />
+                <div >
+                    <form className={`search d-flex align-items-center input-${props.mode}`}>
+                        <i className="fa fa-search" style={{color: 'black'}}></i> <input type="search" className="form-control" placeholder="Search for a country" name='search' onSubmit={props.search} />
+                    </form>
                 </div>
               </div>
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Navbar.css'
+import { Link } from 'react-router-dom'
 const Navbar = (props) => {
 
     const style={
@@ -11,7 +12,7 @@ const Navbar = (props) => {
   return (
     <nav className={`navbar navbar-expand-lg navbar-${props.mode}`} style={style}>
         <div className="container">
-            <a className="navbar-brand heading mx-4 " href="#">Where in the world?</a>
+            <Link className="navbar-brand heading mx-4 " to="/">Where in the world?</Link>
 
             <div className='mode' style={{color: props.textColor === 'light' ? 'black' : 'white'}} onClick={props.toggleMode}>
 

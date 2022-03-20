@@ -11,6 +11,13 @@ const Home = (props) => {
     const [countriesData, setCountriesData] = useState([])
     const [currentCountry, setCurrentCountry] = useState([])
     const [filter, setFilter] = useState('')
+    const [countrySearch, setCountrySearch] = useState('')
+
+    const handleSearch = (e) =>{
+        setCountrySearch(e.target.value)
+        e.preventDefault()
+        console.log(countrySearch)
+    }
 
     const style = {
         backgroundColor: props.mode === 'light' ? 'hsl(0, 0%, 100%)' :'hsl(207, 26%, 17%)',
@@ -46,7 +53,7 @@ const Home = (props) => {
 
   return (
     <div className="container-fluid " style={style}>
-        <Header mode={props.mode} filter={filterCountries} />
+        <Header mode={props.mode} filter={filterCountries} search={handleSearch}  />
         <InfiniteScroll 
         dataLength='12'
         next={updateCountries}
@@ -68,6 +75,7 @@ const Home = (props) => {
                                     <CountryCard flag={ele.flags.svg} title={ele.name} population={ele.population} region={ele.region} capital={ele.capital} mode={props.mode} />
                                 </div>
                             }
+                            
                         })
                     }
             </div>

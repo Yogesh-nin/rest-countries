@@ -62,12 +62,12 @@ const CountryDetails = (props) => {
                                         <span><strong>Native name: </strong>{ele.nativeName}</span><br />
                                         <span><strong>Population: </strong>{ele.population}</span><br />
                                         <span><strong>Region: </strong>{ele.region}</span><br />
-                                        <span><strong>Subregion: </strong>{ele.subRegion}</span><br />
+                                        <span><strong>Subregion: </strong>{ele.subregion}</span><br />
                                         <span><strong>Capital: </strong>{ele.capital}</span><br />
                                     </div>
                                     <div className="col-12 col-md-6">
                                         <span><strong>Top level Domain: </strong>{ele.topLevelDomain}</span><br />
-                                        <span><strong>Currencies: </strong></span><br />
+                                        <span><strong>Currencies: </strong>{ele.currencies[0].name}</span><br />
                                         <span><strong>Languages: </strong>{ele.languages[0]?.name}</span><br />
                                     </div>
                                 </div>

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from './axios/index'
+import BorderButton from './BorderButton'
 import {Link, useParams} from 'react-router-dom'
 const CountryDetails = (props) => {
 
@@ -77,7 +78,7 @@ const CountryDetails = (props) => {
                                         <span><strong>Border countries: </strong></span>
                                     </div>
                                     <div className='col-auto'>
-                                        <span><a className="btn btn-dark" href="#" role="button">France</a></span>
+                                        <BorderButton code={ele.borders[0]} />
                                     </div>
                                 </div>
                                 

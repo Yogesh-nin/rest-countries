@@ -14,8 +14,9 @@ const Home = (props) => {
     const [countrySearch, setCountrySearch] = useState('')
 
     const handleSearch = (e) =>{
-        setCountrySearch(e.target.value)
         e.preventDefault()
+        setCountrySearch(e.target.value)
+        
         console.log(countrySearch)
     }
 
